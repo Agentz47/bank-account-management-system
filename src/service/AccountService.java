@@ -105,6 +105,13 @@ public class AccountService {
 
     ) {
 
+        if (amount <= 0) {
+
+            System.out.println("Transfer amount must be greater than 0!");
+
+            return;
+        }
+
         Account sender = null;
         Account receiver = null;
 
@@ -116,6 +123,13 @@ public class AccountService {
             if (account.getAccountNumber() == toAccountNumber) {
                 receiver = account;
             }
+        }
+
+        if (fromAccountNumber == toAccountNumber) { // VALIDATION
+
+            System.out.println("Cannot transfer to the same account!");
+
+            return;
         }
 
         if (sender == null) {
@@ -132,5 +146,9 @@ public class AccountService {
 
             return;
         }
+
+        sender.withdraw(amount);
+        receiver.deposit(amount);
     }
+
 }
