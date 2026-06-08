@@ -97,4 +97,40 @@ public class AccountService {
 
         System.out.println("Account Not Found!");
     }
+
+    public void transferMoney(
+            int fromAccountNumber,
+            int toAccountNumber,
+            double amount
+
+    ) {
+
+        Account sender = null;
+        Account receiver = null;
+
+        for (Account account : accounts) {
+            if (account.getAccountNumber() == fromAccountNumber) {
+                sender = account;
+            }
+
+            if (account.getAccountNumber() == toAccountNumber) {
+                receiver = account;
+            }
+        }
+
+        if (sender == null) {
+
+            System.out.println("Sender Account Not Found!");
+
+            return;
+
+        }
+
+        if (receiver == null) {
+
+            System.out.println("Receiver Account Not Found!");
+
+            return;
+        }
+    }
 }

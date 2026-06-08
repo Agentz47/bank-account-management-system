@@ -28,7 +28,8 @@ public class Main {
             System.out.println("5. Delete Account");
             System.out.println("6. Deposit Money");
             System.out.println("7. Withdraw Money");
-            System.out.println("8. Exit");
+            System.out.println("8. Transfer Money");
+            System.out.println("9. Exit");
 
             System.out.println("Enter Choice: ");
 
@@ -195,9 +196,12 @@ public class Main {
 
                     break;
 
-
-
                 case 8:
+
+
+
+
+                case 9:
 
                     System.out.println("Goodbye!");
 
