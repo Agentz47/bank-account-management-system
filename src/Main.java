@@ -198,7 +198,19 @@ public class Main {
 
                 case 8:
 
-                    System.out.println("Transfer feature coming soon!!");
+                    System.out.println("Enter Sender Account Number: ");
+                    int senderAccountNumber = scanner.nextInt();
+                    scanner.nextLine();
+
+                    System.out.println("Enter Receiver Account Number: ");
+                    int receiverAccountNumber = scanner.nextInt();
+                    scanner.nextLine();
+
+                    System.out.println("Enter the Transfer Amount: ");
+                    double transferAmount = scanner.nextDouble();
+                    scanner.nextLine();
+
+                    accountService.transferMoney(senderAccountNumber, receiverAccountNumber, transferAmount);
 
                     break;
 
