@@ -52,7 +52,15 @@ public class Main {
             switch (choice) {
 
                 case 1:
+
                     System.out.println("Enter Account Number: ");
+
+                    while (!scanner.hasNextInt()) {
+                        System.out.println("Invalid input! Account number must be a number.");
+                        System.out.print("Enter Account Number: ");
+                        scanner.next();
+                    }
+
                     int accountNumber = scanner.nextInt();
                     scanner.nextLine();
 
@@ -61,6 +69,7 @@ public class Main {
 
                         break;
                     }
+
 
                     if (accountService.accountNumberExists(accountNumber)) {
 

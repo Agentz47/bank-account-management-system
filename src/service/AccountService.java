@@ -149,8 +149,16 @@ public class AccountService {
             return;
         }
 
-        sender.withdraw(amount);
-        receiver.deposit(amount);
+        if (sender.withdraw(amount)) {
+
+            receiver.deposit(amount);
+
+            System.out.println("Transfer Successful!");
+
+        } else {
+
+            System.out.println("Transfer Failed!");
+        }
     }
 
 }

@@ -47,7 +47,7 @@ public abstract class Account {
 
     }
 
-    public abstract void withdraw(double amount);
+    public abstract boolean withdraw(double amount);
 
 
     public void displayAccount() {

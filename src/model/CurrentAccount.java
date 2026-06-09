@@ -15,16 +15,20 @@ public class CurrentAccount extends Account{
 
     }
     @Override
-    public void withdraw(double amount){
+    public boolean withdraw(double amount){
 
         if (balance - amount >= -5000) {
             balance -= amount;
 
             System.out.println("Withdraw Successful!");
 
+            return true;
+
         } else {
 
             System.out.println("Overdraft Limit Exceeded!");
+
+            return false;
         }
     }
 }
